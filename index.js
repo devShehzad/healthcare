@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //use routes
+app.use('/',(req,res) => {
+    res.send({msg: "Hello World"})
+})
 app.use('/api', require('./routes/api'));
 
 //error handling middleware
