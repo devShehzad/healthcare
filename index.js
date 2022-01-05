@@ -3,8 +3,11 @@ const bodyParser = require("body-parser")
 const mongoose = require("mongoose");
 // setting up express
 const app = express();
-// connection mongodb
-mongoose.connect('mongodb://localhost/ninjago',{ useNewUrlParser: true });;
+
+// connection mongodb server 
+mongoose.connect('mongodb+srv://healthcare:admin321@test.sqki8.mongodb.net/healthcare?retryWrites=true&w=majority',{ useNewUrlParser: true });;
+// connection for local storage
+// mongoose.connect('mongodb://localhost/ninjago',{ useNewUrlParser: true });;
 mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
